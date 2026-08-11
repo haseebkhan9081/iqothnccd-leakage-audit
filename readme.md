@@ -9,7 +9,7 @@ Headline findings, each reproduced by a notebook below:
 - Under the image-level partition conventional on this benchmark, **41% of the
   training set is a near-duplicate (cosine ≥ 0.98) of some test image**.
 - Deleting those images from training alone, with the test folds held
-  byte-identical, costs **0.076 balanced accuracy (95% CI 0.054–0.099)** beyond
+  byte-identical, costs **0.076 balanced accuracy (95% CI 0.050–0.103)** beyond
   an equally sized random deletion, rising to 0.199 at a looser threshold.
 - **A recovered group count matching a documented case count is almost no
   evidence that patients were recovered**: scored against real identity on MSD
@@ -32,7 +32,10 @@ Each is self-contained and runs on a free Kaggle or Colab T4.
 | `FYP_Phase2N_DedupArm.ipynb` | Deletes near-duplicates from training only, test folds fixed |
 | `FYP_Phase2T_DedupSweep.ipynb` | The same, swept across similarity thresholds |
 
-`split_seed42.csv` is the frozen partition every notebook reads: columns
+`split_seed42.csv` is the frozen partition the IQ-OTH/NCCD notebooks read for
+class labels and group membership. Note that Phase 2X draws its own five-fold
+partitions from it rather than using its stored splits, and Phase 2G runs on MSD
+and does not read it at all. Columns:
 `file`, `label`, `y`, `group`, `split`, `split_grouped`.
 
 ## Releases
