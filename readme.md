@@ -10,7 +10,10 @@ Headline findings, each reproduced by a notebook below:
   training set is a near-duplicate (cosine ≥ 0.98) of some test image**.
 - Deleting those images from training alone, with the test folds held
   byte-identical, costs **0.076 balanced accuracy (95% CI 0.050–0.103)** beyond
-  an equally sized random deletion, rising to 0.199 at a looser threshold.
+  an equally sized random deletion, rising to 0.199 at a looser threshold. A
+  typicality control finds no such cost for an *unevaluated* held-out set, but
+  cannot separate the two at five folds, so the paper says *consistent with*
+  leakage rather than *caused by* it.
 - **A recovered group count matching a documented case count is almost no
   evidence that patients were recovered**: scored against real identity on MSD
   Task06_Lung, the procedure returns 65 groups against 63 true cases at 0.022
