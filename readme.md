@@ -34,6 +34,18 @@ Each is self-contained and runs on a free Kaggle or Colab T4.
 | `FYP_Phase2R_RandomGroupControl.ipynb` | Random size-matched blocks: is the effect the blocking? |
 | `FYP_Phase2N_DedupArm.ipynb` | Deletes near-duplicates from training only, test folds fixed |
 | `FYP_Phase2T_DedupSweep.ipynb` | The same, swept across similarity thresholds |
+| `FYP_Phase2P_TypicalityControl.ipynb` | Reference-set control: leakage, or just typical images? |
+
+### Revision, October 2026
+
+Added in response to an expert review. Each notebook states its analysis rule
+before any result exists, and was committed here before it was run.
+
+| notebook | what it does |
+|---|---|
+| `FYP_Phase2K_FoldComposition.ipynb` | CPU only. Class composition of every fold construction; feasibility of a density-matched control |
+| `FYP_Phase2NR_DedupRepeated.ipynb` | Phase 2N with 20 random deletions and 5 dedup seeds per fold, so the size control is a distribution |
+| `FYP_Phase2PR_TypicalityPowered.ipynb` | Phase 2P redesigned (R held out in every condition) and powered: 40 reference sets per fold |
 
 `split_seed42.csv` is the frozen partition the IQ-OTH/NCCD notebooks read for
 class labels and group membership. Note that Phase 2X draws its own five-fold
